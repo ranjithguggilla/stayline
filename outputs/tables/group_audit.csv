@@ -1,0 +1,9 @@
+group,employees,leavers,share_called,share_of_leavers_reached
+Gender: Female,177,21,0.1073,0.3333
+Gender: Male,264,50,0.1288,0.42
+MaritalStatus: Divorced,81,7,0.1235,0.2857
+MaritalStatus: Married,206,27,0.0825,0.2963
+MaritalStatus: Single,154,37,0.1688,0.4865
+age band: 30 to 44,249,33,0.1165,0.4242
+age band: 45 and over,97,11,0.1237,0.4545
+age band: under 30,95,27,0.1263,0.3333

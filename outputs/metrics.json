@@ -1,0 +1,358 @@
+{
+  "data": {
+    "employees": 1470,
+    "leavers": 237,
+    "attrition_rate": 0.1612,
+    "train": 1029,
+    "test": 441,
+    "test_leavers": 71,
+    "features": 30
+  },
+  "selection": {
+    "shipped": "logistic",
+    "best_by_mean": "logistic",
+    "cv": {
+      "logistic": {
+        "log_loss": 0.3421,
+        "log_loss_se": 0.0181,
+        "auc": 0.813,
+        "ece": 0.0661
+      },
+      "forest": {
+        "log_loss": 0.358,
+        "log_loss_se": 0.011,
+        "auc": 0.7945,
+        "ece": 0.07
+      },
+      "boosting": {
+        "log_loss": 0.3586,
+        "log_loss_se": 0.0155,
+        "auc": 0.7763,
+        "ece": 0.0551
+      },
+      "prior": {
+        "log_loss": 0.4419,
+        "log_loss_se": 0.0017,
+        "auc": 0.5,
+        "ece": 0.0598
+      },
+      "logistic_balanced": {
+        "log_loss": 0.499,
+        "log_loss_se": 0.0191,
+        "auc": 0.808,
+        "ece": 0.2217
+      }
+    },
+    "best_minus_shipped_log_loss": null
+  },
+  "test": {
+    "log_loss": 0.3142,
+    "auc": 0.8553,
+    "avg_precision": 0.6575,
+    "brier": 0.0919,
+    "ece": 0.0485,
+    "auc_ci": [
+      0.8014,
+      0.9053
+    ],
+    "log_loss_ci": [
+      0.2642,
+      0.3697
+    ],
+    "precision_top20": 0.5227,
+    "recall_top20": 0.6479,
+    "lift_top20": 3.2468,
+    "rule_of_thumb_auc": 0.7477,
+    "all_models": {
+      "logistic": {
+        "log_loss": 0.3142,
+        "auc": 0.8553,
+        "avg_precision": 0.6575,
+        "brier": 0.0919,
+        "ece": 0.0485
+      },
+      "forest": {
+        "log_loss": 0.3559,
+        "auc": 0.7948,
+        "avg_precision": 0.5226,
+        "brier": 0.1072,
+        "ece": 0.0408
+      },
+      "boosting": {
+        "log_loss": 0.3369,
+        "auc": 0.8153,
+        "avg_precision": 0.5658,
+        "brier": 0.1011,
+        "ece": 0.0318
+      },
+      "prior": {
+        "log_loss": 0.4413,
+        "auc": 0.5,
+        "avg_precision": 0.161,
+        "brier": 0.1351,
+        "ece": 0.0604
+      },
+      "logistic_balanced": {
+        "log_loss": 0.4936,
+        "auc": 0.8483,
+        "avg_precision": 0.6475,
+        "brier": 0.1644,
+        "ece": 0.2362
+      }
+    }
+  },
+  "ablation": {
+    "tenure counters | log_loss": {
+      "delta": 0.0076,
+      "lo": -0.0012,
+      "hi": 0.0165
+    },
+    "tenure counters | auc": {
+      "delta": -0.01,
+      "lo": -0.0216,
+      "hi": 0.0015
+    },
+    "pay-rate columns | log_loss": {
+      "delta": -0.0014,
+      "lo": -0.007,
+      "hi": 0.0042
+    },
+    "pay-rate columns | auc": {
+      "delta": 0.0033,
+      "lo": -0.004,
+      "hi": 0.0105
+    },
+    "age, gender, marital status | log_loss": {
+      "delta": 0.0058,
+      "lo": -0.0013,
+      "hi": 0.0129
+    },
+    "age, gender, marital status | auc": {
+      "delta": -0.0056,
+      "lo": -0.0147,
+      "hi": 0.0036
+    }
+  },
+  "importance": {
+    "top": [
+      {
+        "feature": "OverTime",
+        "importance": 0.04734
+      },
+      {
+        "feature": "YearsInCurrentRole",
+        "importance": 0.02175
+      },
+      {
+        "feature": "YearsSinceLastPromotion",
+        "importance": 0.017
+      },
+      {
+        "feature": "JobSatisfaction",
+        "importance": 0.01641
+      },
+      {
+        "feature": "EnvironmentSatisfaction",
+        "importance": 0.01618
+      },
+      {
+        "feature": "NumCompaniesWorked",
+        "importance": 0.01457
+      },
+      {
+        "feature": "JobInvolvement",
+        "importance": 0.01432
+      },
+      {
+        "feature": "MaritalStatus",
+        "importance": 0.01286
+      }
+    ],
+    "noise_max": 5e-05,
+    "features_above_noise": 14,
+    "features_total": 30
+  },
+  "survival": [
+    {
+      "model": "cox",
+      "features": "without tenure counters",
+      "c_index": 0.8636,
+      "auc_vs_exit_flag": 0.815
+    },
+    {
+      "model": "survival forest",
+      "features": "without tenure counters",
+      "c_index": 0.8264,
+      "auc_vs_exit_flag": 0.7897
+    },
+    {
+      "model": "cox",
+      "features": "with tenure counters",
+      "c_index": 0.9788,
+      "auc_vs_exit_flag": 0.7245
+    },
+    {
+      "model": "survival forest",
+      "features": "with tenure counters",
+      "c_index": 0.8819,
+      "auc_vs_exit_flag": 0.7751
+    }
+  ],
+  "survival_km": {
+    "works overtime": 0.7588,
+    "no overtime": 0.9201
+  },
+  "economics": {
+    "assumptions": {
+      "replacement_share_of_annual_pay": 0.5,
+      "cost_per_conversation": 1500.0,
+      "save_rate": 0.25
+    },
+    "chosen_budget_fraction": 0.12,
+    "mean_replacement_cost": 40493.0,
+    "policies_at_chosen": {
+      "oracle (hindsight)": {
+        "net_per_1000": 977755.0,
+        "lo": 718590.0,
+        "hi": 1233698.0
+      },
+      "risk x replacement cost": {
+        "net_per_1000": 469881.0,
+        "lo": 246977.0,
+        "hi": 697992.0
+      },
+      "risk only": {
+        "net_per_1000": 340857.0,
+        "lo": 185828.0,
+        "hi": 473376.0
+      },
+      "rule of thumb": {
+        "net_per_1000": 72405.0,
+        "lo": -3249.0,
+        "hi": 213173.0
+      },
+      "random calls": {
+        "net_per_1000": -25778.0,
+        "lo": -67035.0,
+        "hi": 16786.0
+      },
+      "call everyone": {
+        "net_per_1000": -214816.0,
+        "lo": -558624.0,
+        "hi": 139886.0
+      }
+    },
+    "policies_at_20pct": {
+      "oracle (hindsight)": {
+        "net_per_1000": 985864.0,
+        "lo": 642056.0,
+        "hi": 1335630.0
+      },
+      "risk x replacement cost": {
+        "net_per_1000": 515810.0,
+        "lo": 263060.0,
+        "hi": 767531.0
+      },
+      "risk only": {
+        "net_per_1000": 368398.0,
+        "lo": 162967.0,
+        "hi": 541108.0
+      },
+      "rule of thumb": {
+        "net_per_1000": 215041.0,
+        "lo": 62057.0,
+        "hi": 385633.0
+      },
+      "random calls": {
+        "net_per_1000": -42963.0,
+        "lo": -111725.0,
+        "hi": 27977.0
+      },
+      "call everyone": {
+        "net_per_1000": -214816.0,
+        "lo": -558624.0,
+        "hi": 139886.0
+      }
+    },
+    "break_even_save_rate": 0.0693,
+    "net_per_1000_by_save_rate": {
+      "0.05": -50241.0,
+      "0.10": 79789.0,
+      "0.15": 209820.0,
+      "0.25": 469881.0,
+      "0.40": 859973.0
+    },
+    "leavers_reached_at_chosen": 0.3944,
+    "people_called": 53
+  },
+  "group_audit": [
+    {
+      "group": "Gender: Female",
+      "employees": 177,
+      "leavers": 21,
+      "share_called": 0.1073,
+      "share_of_leavers_reached": 0.3333
+    },
+    {
+      "group": "Gender: Male",
+      "employees": 264,
+      "leavers": 50,
+      "share_called": 0.1288,
+      "share_of_leavers_reached": 0.42
+    },
+    {
+      "group": "MaritalStatus: Divorced",
+      "employees": 81,
+      "leavers": 7,
+      "share_called": 0.1235,
+      "share_of_leavers_reached": 0.2857
+    },
+    {
+      "group": "MaritalStatus: Married",
+      "employees": 206,
+      "leavers": 27,
+      "share_called": 0.0825,
+      "share_of_leavers_reached": 0.2963
+    },
+    {
+      "group": "MaritalStatus: Single",
+      "employees": 154,
+      "leavers": 37,
+      "share_called": 0.1688,
+      "share_of_leavers_reached": 0.4865
+    },
+    {
+      "group": "age band: 30 to 44",
+      "employees": 249,
+      "leavers": 33,
+      "share_called": 0.1165,
+      "share_of_leavers_reached": 0.4242
+    },
+    {
+      "group": "age band: 45 and over",
+      "employees": 97,
+      "leavers": 11,
+      "share_called": 0.1237,
+      "share_of_leavers_reached": 0.4545
+    },
+    {
+      "group": "age band: under 30",
+      "employees": 95,
+      "leavers": 27,
+      "share_called": 0.1263,
+      "share_of_leavers_reached": 0.3333
+    }
+  ],
+  "reasons": {
+    "lime_overlap_jaccard": 0.4642,
+    "employees_compared": 40
+  },
+  "bundle": {
+    "band_thresholds": [
+      0.1391,
+      0.4001
+    ],
+    "refit_on": "train and test together"
+  },
+  "runtime_seconds": 87
+}

@@ -1,0 +1,5 @@
+model,features,c_index,auc_vs_exit_flag
+cox,without tenure counters,0.8635638683485574,0.8150361629234868
+survival forest,without tenure counters,0.8263979507998647,0.7896840502474304
+cox,with tenure counters,0.9787830457686917,0.7245146555005709
+survival forest,with tenure counters,0.881881011067614,0.775142748382185
