@@ -148,7 +148,7 @@ pip install -r requirements.txt
 pip install -e . --no-deps
 ```
 
-Python 3.11 or newer. I developed on 3.13.
+Python 3.12 or newer. I developed on 3.13.
 
 ## Usage
 

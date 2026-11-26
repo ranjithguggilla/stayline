@@ -7,7 +7,7 @@ name = "stayline"
 version = "0.1.0"
 description = "Employee attrition risk, survival cross-checks and retention-call economics"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [{ name = "Ranjith Guggilla", email = "ranjithguggilla668@gmail.com" }]
 dependencies = [
